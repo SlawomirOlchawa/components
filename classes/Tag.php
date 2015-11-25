@@ -39,6 +39,14 @@ class Tag extends TagSingle
     }
 
     /**
+     * Delete all subcomponents
+     */
+    public function clear()
+    {
+        $this->_container->clear();
+    }
+
+    /**
      * Set HTML content
      *
      * @param string $value

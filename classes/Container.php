@@ -30,6 +30,17 @@ class Container extends Component
     }
 
     /**
+     * Delete all subcomponents
+     */
+    public function clear()
+    {
+        foreach ($this->_components as $key => $value)
+        {
+            unset($this->_components[$key]);
+        }
+    }
+
+    /**
      * Renders component
      *
      * @return string
