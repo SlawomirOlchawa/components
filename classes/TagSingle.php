@@ -32,7 +32,7 @@ class TagSingle extends Component
 
     public function __construct()
 	{
-        if (defined('Kohana::DEBUG') AND Kohana::$environment == Kohana::DEBUG)
+        if (class_exists('Kohana') AND defined('Kohana::DEBUG') AND Kohana::$environment == Kohana::DEBUG)
         {
 		    $this->_cssClasses[] = get_class($this);
         }

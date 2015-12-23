@@ -48,7 +48,7 @@ abstract class Component
      */
     public function cache($name, $lifetime = null)
     {
-        if (Kohana::$environment !== Kohana::PRODUCTION) return;
+        if (class_exists('Kohana') AND Kohana::$environment !== Kohana::PRODUCTION) return;
 
         $this->_cacheSettings = array('name' => $name, 'lifetime' => $lifetime);
     }
@@ -70,7 +70,7 @@ abstract class Component
     {
         $result = $content;
 
-        if (defined('Kohana::DEBUG') AND Kohana::$environment == Kohana::DEBUG)
+        if (class_exists('Kohana') AND defined('Kohana::DEBUG') AND Kohana::$environment == Kohana::DEBUG)
         {
             $viewName = null;
 

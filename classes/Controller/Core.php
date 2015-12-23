@@ -104,7 +104,14 @@ class Controller_Core extends Controller_Template
 
         if (strpos($uri, '://') === FALSE)
         {
-            $uri = URL::site($uri, TRUE, !empty(Kohana::$index_file));
+            $index = true;
+
+            if (class_exists('Kohana'))
+            {
+                $index = !empty(Kohana::$index_file);
+            }
+
+            $uri = URL::site($uri, TRUE, $index);
         }
 
         header('Location: '.$uri);

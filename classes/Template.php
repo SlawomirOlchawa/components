@@ -22,7 +22,7 @@ class Template extends Component
         {
             $this->_view = new View($view);
 
-            if (defined('Kohana::DEBUG') AND Kohana::$environment == Kohana::DEBUG)
+            if (class_exists('Kohana') AND defined('Kohana::DEBUG') AND Kohana::$environment == Kohana::DEBUG)
             {
                 $this->_viewName = $view;
             }
